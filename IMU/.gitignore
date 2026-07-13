@@ -1,0 +1,4 @@
+.DS_Store
+pico2_micropython.uf2
+__pycache__/
+*.pyc
