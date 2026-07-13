@@ -1,0 +1,3 @@
+[submodule "stm32/angle_measurement_kalman"]
+	path = stm32/angle_measurement_kalman
+	url = https://github.com/light655/angle_measurement_kalman.git

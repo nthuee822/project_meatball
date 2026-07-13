@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "current_shunt")(type "KiCad")(uri "/home/light/Projects/meatball/hardware/lib/current_shunt.pretty")(options "")(descr ""))
+)
