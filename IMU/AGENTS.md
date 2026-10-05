@@ -17,7 +17,7 @@ There is no build step. Install runtime support on a Raspberry Pi:
 
 ```bash
 sudo apt install -y python3-smbus i2c-tools
-python3 -m pip install smbus2  # optional alternative backend
+uv sync                         # installs smbus2 (repo-root pyproject.toml)
 ```
 
 Common commands:

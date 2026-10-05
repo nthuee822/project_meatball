@@ -1,0 +1,16 @@
+[project]
+name = "project-meatball"
+version = "0.1.0"
+description = "Omni-wheel robot: controller, IMU, and STM32 tooling"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "pygame",
+    # Hardware libraries: only installed on Raspberry Pi (Linux ARM64).
+    # rpi-lgpio provides the `RPi.GPIO` API and works on Pi 5 (original RPi.GPIO does not).
+    "smbus2; sys_platform == 'linux' and platform_machine == 'aarch64'",
+    "spidev; sys_platform == 'linux' and platform_machine == 'aarch64'",
+    "rpi-lgpio; sys_platform == 'linux' and platform_machine == 'aarch64'",
+]

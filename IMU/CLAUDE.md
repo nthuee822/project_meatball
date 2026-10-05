@@ -10,7 +10,7 @@ Python driver for the ICM-20948 9-axis IMU (accelerometer, gyroscope, magnetomet
 
 ```bash
 sudo apt install -y python3-smbus i2c-tools
-# or: pip install smbus2
+# or: uv sync  (installs smbus2 from repo-root pyproject.toml)
 ```
 
 Enable I2C via `sudo raspi-config` → Interface Options → I2C.

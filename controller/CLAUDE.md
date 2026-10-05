@@ -37,17 +37,15 @@ python test.py
 
 ## Dependencies
 
+Managed by uv from the repo-root `pyproject.toml` / `uv.lock` (shared `.venv/` at repo root):
+
 ```bash
-# Basic (display mode)
-pip install pygame numpy
-
-# SPI mode (Raspberry Pi only)
-pip install pygame numpy spidev RPi.GPIO
-
-# IMU mode (additional)
-sudo apt install python3-smbus i2c-tools
-# or: pip install smbus2
+uv sync                      # install/update the environment
+uv run python omni_robot.py  # run scripts through uv
+uv add <pkg>                 # add a dependency (never pip install)
 ```
+
+Hardware packages (`spidev`, `smbus2`, `rpi-lgpio` providing `RPi.GPIO` on Pi 5) are only installed on Raspberry Pi via environment markers. `i2c-tools` (`sudo apt install i2c-tools`) is still useful for `i2cdetect`.
 
 Enable SPI and I2C on the Pi via `sudo raspi-config` → Interface Options.
 

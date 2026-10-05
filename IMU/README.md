@@ -50,7 +50,7 @@ sudo apt install -y python3-smbus i2c-tools
 Alternatively, if you prefer to use `smbus2` from pip instead of the system `smbus`:
 
 ```bash
-python3 -m pip install smbus2
+uv sync    # from the repo root; installs smbus2 into .venv
 ```
 
 Both backends work with these scripts.

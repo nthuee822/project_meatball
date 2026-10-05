@@ -14,15 +14,14 @@ This repository contains a Python controller for a three-wheel omnidirectional r
 
 ## Build, Test, and Development Commands
 
-Create and use a virtual environment before installing dependencies:
+Dependencies are managed by uv from the repo-root `pyproject.toml` / `uv.lock` (one shared `.venv/` at the repo root):
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install pygame numpy
+uv sync                      # install/update the environment
+uv run python omni_robot.py  # run any script through uv
 ```
 
-For Raspberry Pi SPI mode, also install `spidev` and `RPi.GPIO`. For IMU mode, install `smbus2` or `python3-smbus` and enable SPI/I2C through `raspi-config`.
+Hardware packages (`spidev`, `smbus2`, `rpi-lgpio` providing `RPi.GPIO`) are only installed on Raspberry Pi. Add new dependencies with `uv add <pkg>`, not `pip install`. Enable SPI/I2C through `raspi-config`.
 
 Common commands:
 

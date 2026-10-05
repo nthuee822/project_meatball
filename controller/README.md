@@ -28,15 +28,13 @@ controller/
 
 ### 環境需求
 
-**基本版本（顯示模式）:**
+Python 環境由 repo 根目錄的 uv 統一管理（詳見[根目錄 README](../README.md#python-environment-uv)）：
 ```bash
-pip install pygame numpy
+uv sync    # 在 repo 任一目錄執行一次即可
 ```
+在筆電上只會安裝 `pygame`、`numpy` 等通用套件（可跑顯示模式）；在 Raspberry Pi 上會另外安裝 `spidev`、`smbus2`、`rpi-lgpio`（提供 `RPi.GPIO`，支援 Pi 5），可跑 SPI / IMU 版本。
 
-**SPI 版本（需在 Raspberry Pi 上執行）:**
-```bash
-pip install pygame numpy spidev RPi.GPIO
-```
+以下指令都以 `uv run python ...` 執行，或先 `source ../.venv/bin/activate` 後直接用 `python`。
 
 ### 運行機器人控制器（顯示模式）
 ```bash
