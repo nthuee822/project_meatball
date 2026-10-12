@@ -19,6 +19,7 @@ controller/
 ├── f710controller.py      # F710手把讀取模組
 ├── omni_robot.py          # 主程式（顯示模式）
 ├── controller2spi.py      # SPI輸出版本
+├── keyboard_controller.py  # 鍵盤控制 SPI 版本
 ├── test.py                # 按鈕測試工具
 ├── run_test.py            # 快速測試腳本
 └── README.md              # 本文檔
@@ -48,7 +49,13 @@ python controller2spi.py
 
 # 詳細模式
 python controller2spi.py --verbose
+
+# 鍵盤控制 SPI 版本
+python keyboard_controller.py
 ```
+
+鍵盤控制時，使用 `WASD` 或方向鍵平移，`Q/E` 自轉，按住 `Space` 暫停馬達，
+按 `Esc` 或 `X` 安全退出。此模式需要 Raspberry Pi 的 SPI、GPIO，以及可用的圖形桌面。
 
 ### 測試手把按鈕
 ```bash

@@ -2,7 +2,7 @@
 import pygame
 import os
 
-os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
 
 class F710Controller:
     def __init__(self, deadzone=0.1):
