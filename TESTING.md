@@ -83,6 +83,7 @@ CS 腳位：GPIO 17 = 輪1（前）、GPIO 27 = 輪2（左後）、GPIO 22 = 輪
 | [ ] D3 🔴👀 | IMU 融合控制 | `cd controller && python3 ctrl_with_imu_2spi.py` | `controller/ctrl_with_imu_2spi.py`、`omni_robot.py`、`IMU_DMP/icm20948.py` | 未跑 | ⚠️ 會等手把連線，需 B 區、C 區都通過 |
 
 keyboard control 的東西之前試過要用的東西 之後有碰到什麼 bug 再修
+
 **D1 細項（keyboard_teleop.py）**
 - [ ] W / S / A / D 或方向鍵：前進 / 後退 / 左移 / 右移，每顆輪子轉向正確
 - [ ] Q / E / Z / C：四個斜向
@@ -101,6 +102,8 @@ keyboard control 的東西之前試過要用的東西 之後有碰到什麼 bug 
 ---
 
 ## E. STM32 韌體
+
+這邊基本上是在電腦上面跑的 raspberry pi 上面不需要跑得動
 
 ⚠️ 這台 Pi **沒有 `arm-none-eabi-gcc` 和 `cmake`**，沒辦法重新 build。要在有 STM32CubeIDE 的電腦上 build，或在 Pi 上安裝 toolchain。各專案目前都有舊的 `build/Debug/*.elf`。
 
@@ -122,8 +125,8 @@ keyboard control 的東西之前試過要用的東西 之後有碰到什麼 bug 
 
 ## F. Repo 整理（非測試）
 
-- [ ] commit `controller/keyboard_controller.py`、`controller/keyboard_teleop.py`、`README.md`（目前未追蹤）
-- [ ] commit `controller/f710controller.py`、`omni_robot.py`、`README.md` 的修改
-- [ ] `controller/IMU_DMP` 是 gitlink，但 `.gitmodules` 沒登記，別人 clone 下來會是空資料夾
-- [ ] `controller/__pycache__/*.pyc` 被 git 追蹤了，建議加進 `.gitignore`
-- [ ] commit 或捨棄 `stm32/angle_measurement_kalman` submodule 裡 `main.c` 的修改
+- [v] commit `controller/keyboard_controller.py`、`controller/keyboard_teleop.py`、`README.md`（目前未追蹤）
+- [v] commit `controller/f710controller.py`、`omni_robot.py`、`README.md` 的修改
+- [v] `controller/IMU_DMP` 是 gitlink，但 `.gitmodules` 沒登記，別人 clone 下來會是空資料夾
+- [v] `controller/__pycache__/*.pyc` 被 git 追蹤了，建議加進 `.gitignore`
+- [v] commit 或捨棄 `stm32/angle_measurement_kalman` submodule 裡 `main.c` 的修改
